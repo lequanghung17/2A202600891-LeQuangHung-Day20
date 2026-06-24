@@ -1,0 +1,376 @@
+(.venv312) PS C:\Users\PC\Downloads\2A202600891-LeQuangHung-Day20> .\.venv312\Scripts\python.exe -m multi_agent_research_lab.cli multi-agent --query "Compare single-agent and multi-agent workflows for customer support"
+2026-06-24 11:41:46,755 INFO httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 11:41:58,508 INFO httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+{
+  "request": {
+    "query": "Compare single-agent and multi-agent workflows for customer 
+support",
+    "max_sources": 5,
+    "audience": "technical learners"
+  },
+  "iteration": 4,
+  "route_history": [
+    "researcher",
+    "analyst",
+    "writer",
+    "done"
+  ],
+  "sources": [
+    {
+      "title": "Multi-agent workflow guardrails",
+      "url": "mock://sources/agent-guardrails",
+      "snippet": "Production agent workflows need max iterations, timeouts, 
+validation, retry policies, fallbacks, and trace logs for debugging failure 
+modes.",
+      "metadata": {
+        "source_type": "mock",
+        "topic": "guardrails",
+        "rank": 1
+      }
+    },
+    {
+      "title": "Single-agent vs multi-agent benchmark",
+      "url": "mock://sources/agent-benchmark",
+      "snippet": "Useful benchmark dimensions include latency, estimated token 
+cost, quality, citation coverage, and failure rate across the same evaluation 
+queries.",
+      "metadata": {
+        "source_type": "mock",
+        "topic": "benchmark",
+        "rank": 2
+      }
+    },
+    {
+      "title": "GraphRAG overview",
+      "url": "mock://sources/graphrag-overview",
+      "snippet": "GraphRAG combines retrieval-augmented generation with 
+graph-structured indexes so answers can use entity relationships and community 
+summaries.",
+      "metadata": {
+        "source_type": "mock",
+        "topic": "GraphRAG",
+        "rank": 3
+      }
+    },
+    {
+      "title": "GraphRAG trade-offs",
+      "url": "mock://sources/graphrag-tradeoffs",
+      "snippet": "Graph-based retrieval can improve global questions and 
+synthesis, but it adds indexing cost, graph maintenance work, and evaluation 
+complexity.",
+      "metadata": {
+        "source_type": "mock",
+        "topic": "GraphRAG",
+        "rank": 4
+      }
+    },
+    {
+      "title": "Agent orchestration patterns",
+      "url": "mock://sources/agent-orchestration",
+      "snippet": "A supervisor can route work among specialized agents, inspect 
+shared state, and stop when research, analysis, and writing outputs are 
+complete.",
+      "metadata": {
+        "source_type": "mock",
+        "topic": "multi-agent",
+        "rank": 5
+      }
+    }
+  ],
+  "research_notes": "[1] Multi-agent workflow guardrails: Production agent 
+workflows need max iterations, timeouts, validation, retry policies, fallbacks, 
+and trace logs for debugging failure modes.\n[2] Single-agent vs multi-agent 
+benchmark: Useful benchmark dimensions include latency, estimated token cost, 
+quality, citation coverage, and failure rate across the same evaluation 
+queries.\n[3] GraphRAG overview: GraphRAG combines retrieval-augmented generation
+with graph-structured indexes so answers can use entity relationships and 
+community summaries.\n[4] GraphRAG trade-offs: Graph-based retrieval can improve 
+global questions and synthesis, but it adds indexing cost, graph maintenance 
+work, and evaluation complexity.\n[5] Agent orchestration patterns: A supervisor 
+can route work among specialized agents, inspect shared state, and stop when 
+research, analysis, and writing outputs are complete.",
+  "analysis_notes": "### 1. Key Claims\n- **Multi-Agent Workflows**: These 
+workflows are characterized by the use of multiple specialized agents that can 
+handle different aspects of customer support, leading to potentially improved 
+efficiency and quality of responses. They require structured guardrails, 
+including maximum iterations, timeouts, validation, and fallback mechanisms to 
+ensure reliability and facilitate debugging [1].\n- **Single-Agent Workflows**: 
+In contrast, single-agent workflows rely on a single entity to manage customer 
+support tasks, which may simplify the process but can lead to limitations in 
+handling complex queries or high volumes of requests.\n- **Benchmarking**: When 
+comparing single-agent and multi-agent workflows, key dimensions include latency,
+estimated token costs, quality of responses, citation coverage, and failure 
+rates, which can provide insights into performance differences [2].\n\n### 2. 
+Trade-offs or Disagreements\n- **Complexity vs. Efficiency**: Multi-agent systems
+can offer enhanced capabilities through specialization and orchestration, 
+potentially leading to better outcomes for complex queries. However, they 
+introduce additional complexity in terms of maintenance, indexing costs, and 
+evaluation [4]. Single-agent systems, while simpler, may struggle with 
+scalability and the depth of responses.\n- **Quality vs. Cost**: Multi-agent 
+workflows may incur higher operational costs due to the need for multiple agents 
+and their orchestration, while single-agent systems might be more cost-effective 
+but could compromise on the quality of responses, particularly for nuanced 
+inquiries.\n\n### 3. Evidence Gaps or Risks\n- **Performance Metrics**: There is 
+a need for more empirical data comparing the performance of single-agent versus 
+multi-agent workflows across various customer support scenarios. Current 
+benchmarks may not fully capture the nuances of real-world applications [2].\n- 
+**Long-term Viability**: The sustainability of multi-agent systems in terms of 
+maintenance and operational costs remains underexplored, particularly in dynamic 
+environments where customer needs evolve rapidly.\n\n### 4. Recommendation for 
+the Writer\nTo provide a comprehensive analysis of single-agent versus 
+multi-agent workflows in customer support, the writer should:\n- Include specific
+case studies or empirical data that illustrate the performance differences in 
+real-world applications.\n- Discuss the implications of the trade-offs 
+identified, particularly how organizations can balance complexity and efficiency 
+based on their specific needs.\n- Explore potential future developments in agent 
+orchestration and retrieval-augmented generation technologies, such as GraphRAG, 
+to highlight innovative solutions that could bridge gaps between single and 
+multi-agent systems [3][4].",
+  "final_answer": "When comparing single-agent and multi-agent workflows for 
+customer support, several key differences and trade-offs emerge that can 
+significantly impact performance and efficiency.\n\n### Single-Agent 
+Workflows\nSingle-agent workflows utilize a single entity to manage customer 
+support tasks. This approach simplifies the process, making it easier to 
+implement and maintain. However, it may struggle with handling complex queries or
+high volumes of requests, potentially leading to slower response times and lower 
+quality in nuanced inquiries. The operational costs are generally lower since 
+only one agent is involved, but this can come at the expense of depth and quality
+of responses [2].\n\n### Multi-Agent Workflows\nIn contrast, multi-agent 
+workflows involve multiple specialized agents that can address different aspects 
+of customer support. This specialization can enhance efficiency and improve the 
+quality of responses, particularly for complex queries. However, multi-agent 
+systems require structured guardrails, such as maximum iterations, timeouts, 
+validation, and fallback mechanisms, to ensure reliability and facilitate 
+debugging [1]. The complexity of managing these systems can lead to higher 
+operational costs due to the need for orchestration and maintenance [4]. \n\n### 
+Performance Metrics\nWhen evaluating these workflows, key dimensions include 
+latency, estimated token costs, quality of responses, citation coverage, and 
+failure rates [2]. Multi-agent systems may outperform single-agent systems in 
+terms of quality and efficiency for complex tasks, but they also introduce 
+additional complexity and costs.\n\n### Trade-offs\nThe primary trade-off between
+these two systems lies in complexity versus efficiency. Multi-agent workflows can
+provide better outcomes for intricate queries through specialization, but they 
+come with increased maintenance and operational costs. Conversely, single-agent 
+systems are simpler and more cost-effective but may not scale well or provide the
+depth of responses needed for more challenging customer inquiries [4].\n\n### 
+Conclusion\nIn summary, the choice between single-agent and multi-agent workflows
+for customer support depends on the specific needs of the organization. 
+Multi-agent systems may be more suitable for complex environments requiring 
+high-quality responses, while single-agent systems could be ideal for simpler, 
+lower-volume scenarios. Future developments in technologies like GraphRAG, which 
+combines retrieval-augmented generation with graph-structured indexes, may offer 
+innovative solutions to bridge the gaps between these two approaches 
+[3][4].\n\nFor organizations considering these workflows, it is crucial to assess
+their operational requirements, customer needs, and the potential trade-offs 
+involved in implementing either system.",
+  "agent_results": [
+    {
+      "agent": "supervisor",
+      "content": "Route to researcher: missing_research_notes",
+      "metadata": {
+        "next_route": "researcher",
+        "reason": "missing_research_notes"
+      }
+    },
+    {
+      "agent": "researcher",
+      "content": "[1] Multi-agent workflow guardrails: Production agent workflows
+need max iterations, timeouts, validation, retry policies, fallbacks, and trace 
+logs for debugging failure modes.\n[2] Single-agent vs multi-agent benchmark: 
+Useful benchmark dimensions include latency, estimated token cost, quality, 
+citation coverage, and failure rate across the same evaluation queries.\n[3] 
+GraphRAG overview: GraphRAG combines retrieval-augmented generation with 
+graph-structured indexes so answers can use entity relationships and community 
+summaries.\n[4] GraphRAG trade-offs: Graph-based retrieval can improve global 
+questions and synthesis, but it adds indexing cost, graph maintenance work, and 
+evaluation complexity.\n[5] Agent orchestration patterns: A supervisor can route 
+work among specialized agents, inspect shared state, and stop when research, 
+analysis, and writing outputs are complete.",
+      "metadata": {
+        "source_count": 5
+      }
+    },
+    {
+      "agent": "supervisor",
+      "content": "Route to analyst: missing_analysis_notes",
+      "metadata": {
+        "next_route": "analyst",
+        "reason": "missing_analysis_notes"
+      }
+    },
+    {
+      "agent": "analyst",
+      "content": "### 1. Key Claims\n- **Multi-Agent Workflows**: These workflows
+are characterized by the use of multiple specialized agents that can handle 
+different aspects of customer support, leading to potentially improved efficiency
+and quality of responses. They require structured guardrails, including maximum 
+iterations, timeouts, validation, and fallback mechanisms to ensure reliability 
+and facilitate debugging [1].\n- **Single-Agent Workflows**: In contrast, 
+single-agent workflows rely on a single entity to manage customer support tasks, 
+which may simplify the process but can lead to limitations in handling complex 
+queries or high volumes of requests.\n- **Benchmarking**: When comparing 
+single-agent and multi-agent workflows, key dimensions include latency, estimated
+token costs, quality of responses, citation coverage, and failure rates, which 
+can provide insights into performance differences [2].\n\n### 2. Trade-offs or 
+Disagreements\n- **Complexity vs. Efficiency**: Multi-agent systems can offer 
+enhanced capabilities through specialization and orchestration, potentially 
+leading to better outcomes for complex queries. However, they introduce 
+additional complexity in terms of maintenance, indexing costs, and evaluation 
+[4]. Single-agent systems, while simpler, may struggle with scalability and the 
+depth of responses.\n- **Quality vs. Cost**: Multi-agent workflows may incur 
+higher operational costs due to the need for multiple agents and their 
+orchestration, while single-agent systems might be more cost-effective but could 
+compromise on the quality of responses, particularly for nuanced 
+inquiries.\n\n### 3. Evidence Gaps or Risks\n- **Performance Metrics**: There is 
+a need for more empirical data comparing the performance of single-agent versus 
+multi-agent workflows across various customer support scenarios. Current 
+benchmarks may not fully capture the nuances of real-world applications [2].\n- 
+**Long-term Viability**: The sustainability of multi-agent systems in terms of 
+maintenance and operational costs remains underexplored, particularly in dynamic 
+environments where customer needs evolve rapidly.\n\n### 4. Recommendation for 
+the Writer\nTo provide a comprehensive analysis of single-agent versus 
+multi-agent workflows in customer support, the writer should:\n- Include specific
+case studies or empirical data that illustrate the performance differences in 
+real-world applications.\n- Discuss the implications of the trade-offs 
+identified, particularly how organizations can balance complexity and efficiency 
+based on their specific needs.\n- Explore potential future developments in agent 
+orchestration and retrieval-augmented generation technologies, such as GraphRAG, 
+to highlight innovative solutions that could bridge gaps between single and 
+multi-agent systems [3][4].",
+      "metadata": {
+        "input_tokens": 257,
+        "output_tokens": 495
+      }
+    },
+    {
+      "agent": "supervisor",
+      "content": "Route to writer: missing_final_answer",
+      "metadata": {
+        "next_route": "writer",
+        "reason": "missing_final_answer"
+      }
+    },
+    {
+      "agent": "writer",
+      "content": "When comparing single-agent and multi-agent workflows for 
+customer support, several key differences and trade-offs emerge that can 
+significantly impact performance and efficiency.\n\n### Single-Agent 
+Workflows\nSingle-agent workflows utilize a single entity to manage customer 
+support tasks. This approach simplifies the process, making it easier to 
+implement and maintain. However, it may struggle with handling complex queries or
+high volumes of requests, potentially leading to slower response times and lower 
+quality in nuanced inquiries. The operational costs are generally lower since 
+only one agent is involved, but this can come at the expense of depth and quality
+of responses [2].\n\n### Multi-Agent Workflows\nIn contrast, multi-agent 
+workflows involve multiple specialized agents that can address different aspects 
+of customer support. This specialization can enhance efficiency and improve the 
+quality of responses, particularly for complex queries. However, multi-agent 
+systems require structured guardrails, such as maximum iterations, timeouts, 
+validation, and fallback mechanisms, to ensure reliability and facilitate 
+debugging [1]. The complexity of managing these systems can lead to higher 
+operational costs due to the need for orchestration and maintenance [4]. \n\n### 
+Performance Metrics\nWhen evaluating these workflows, key dimensions include 
+latency, estimated token costs, quality of responses, citation coverage, and 
+failure rates [2]. Multi-agent systems may outperform single-agent systems in 
+terms of quality and efficiency for complex tasks, but they also introduce 
+additional complexity and costs.\n\n### Trade-offs\nThe primary trade-off between
+these two systems lies in complexity versus efficiency. Multi-agent workflows can
+provide better outcomes for intricate queries through specialization, but they 
+come with increased maintenance and operational costs. Conversely, single-agent 
+systems are simpler and more cost-effective but may not scale well or provide the
+depth of responses needed for more challenging customer inquiries [4].\n\n### 
+Conclusion\nIn summary, the choice between single-agent and multi-agent workflows
+for customer support depends on the specific needs of the organization. 
+Multi-agent systems may be more suitable for complex environments requiring 
+high-quality responses, while single-agent systems could be ideal for simpler, 
+lower-volume scenarios. Future developments in technologies like GraphRAG, which 
+combines retrieval-augmented generation with graph-structured indexes, may offer 
+innovative solutions to bridge the gaps between these two approaches 
+[3][4].\n\nFor organizations considering these workflows, it is crucial to assess
+their operational requirements, customer needs, and the potential trade-offs 
+involved in implementing either system.",
+      "metadata": {
+        "input_tokens": 956,
+        "output_tokens": 471
+      }
+    },
+    {
+      "agent": "supervisor",
+      "content": "Route to done: complete",
+      "metadata": {
+        "next_route": "done",
+        "reason": "complete"
+      }
+    }
+  ],
+  "trace": [
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "next": "researcher",
+        "reason": "missing_research_notes",
+        "iteration": 1,
+        "max_iterations": 6
+      }
+    },
+    {
+      "name": "researcher.search",
+      "payload": {
+        "source_count": 5,
+        "sources": [
+          "Multi-agent workflow guardrails",
+          "Single-agent vs multi-agent benchmark",
+          "GraphRAG overview",
+          "GraphRAG trade-offs",
+          "Agent orchestration patterns"
+        ],
+        "duration_seconds": 0.00011020002420991659
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "next": "analyst",
+        "reason": "missing_analysis_notes",
+        "iteration": 2,
+        "max_iterations": 6
+      }
+    },
+    {
+      "name": "analyst.analyze",
+      "payload": {
+        "input_tokens": 257,
+        "output_tokens": 495,
+        "duration_seconds": 13.604164399992442
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "next": "writer",
+        "reason": "missing_final_answer",
+        "iteration": 3,
+        "max_iterations": 6
+      }
+    },
+    {
+      "name": "writer.final_answer",
+      "payload": {
+        "input_tokens": 956,
+        "output_tokens": 471,
+        "duration_seconds": 11.771523999981582
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "next": "done",
+        "reason": "complete",
+        "iteration": 4,
+        "max_iterations": 6
+      }
+    }
+  ],
+  "errors": []
+}
+(.venv312) PS C:\Users\PC\Downloads\2A202600891-LeQuangHung-Day20> 
